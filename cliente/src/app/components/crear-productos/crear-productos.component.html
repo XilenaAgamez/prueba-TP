@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">{{titulo | uppercase}}</span>
+                    <form class="mt-3" [formGroup]= "productoForm" (ngSubmit)="agregarProducto()">
+                        
+                        <div class="form-group mb-3">
+                            <input type="text" formControlName="nombre" class="form-control form-control-lg" placeholder="nombre"  >
+                            
+                        </div>
+
+                        <div class="mb-3">
+                        <input type="text" formControlName="categoria" class="form-control form-control-lg" placeholder="categoria" >
+                            
+                        </div>
+
+                        <div class="mb-3">
+                        <input type="number" formControlName="precio" class="form-control form-control-lg" placeholder="precio" >
+                            
+                        </div>
+
+                          <div class="mb-3">
+                            <input type="text" formControlName="descripcion" class="form-control form-control-lg" placeholder="descripcion" >
+                             
+                          </div>
+
+                          <div class="mb-3">
+                                <button  routerLink="/" class="btn btn-secondary btn-lg float-start">Volver</button>
+                                <button type="submit" [disabled]=" productoForm.invalid" class="btn btn-success btn-lg float-end">Aceptar</button>
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
